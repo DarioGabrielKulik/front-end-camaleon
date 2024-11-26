@@ -1,0 +1,24 @@
+<div class="container mt-5">
+    <form class="col-lg-6 offset-lg-3 col-md-12" [formGroup]="miFormulario" (ngSubmit)="guardar()">
+        <h1 class="form-label mt-4 mb-4 text-center fw-bold">RECUPERAR CONTRASEÑA</h1>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingInput" placeholder="Codigo" autocomplete="off" formControlName="codigo">
+          <label for="floatingInput">Codigo</label> 
+          <span class="form-text text-danger" *ngIf="validar('codigo')">El codigo no puede quedar vacio</span>       
+        </div>
+        <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingInput2" placeholder="Password" autocomplete="off"  formControlName="password">
+            <label for="floatingInput2">Password</label> 
+            <span class="form-text text-danger" *ngIf="validar('password')">El password debe ser de 6 caracteres</span>       
+          </div>
+          <div class="form-floating mb-3">
+            <input type="password" class="form-control" id="floatingInput3" placeholder="Volver a ingresar el password" formControlName="password2" autocomplete="off" >
+            <label for="floatingInput3">Volver a ingresar el password</label>        
+          </div>
+        <span class="form-text text-danger"  *ngIf="confirmarPassword">Las contraseñas no coinciden</span>
+        <span class="form-text text-danger"  *ngIf="error">{{mensaje}}</span>      
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-outline-primary mt-3 btn-block" (click)="validarPassword()">CAMBIAR CONTRASEÑA</button>
+        </div>
+    </form>
+</div>

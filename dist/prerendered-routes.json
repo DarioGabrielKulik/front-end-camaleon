@@ -1,0 +1,33 @@
+{
+  "routes": [
+    "/",
+    "/acortador-de-enlace",
+    "/admin",
+    "/admin/inicio",
+    "/admin/lista",
+    "/auth",
+    "/auth/acortador-de-enlace",
+    "/auth/inicio",
+    "/auth/lista-de-enlaces",
+    "/cambio-password",
+    "/enviar-correo",
+    "/enviar-correo-recuperacion",
+    "/inicio",
+    "/lista",
+    "/lista-de-enlaces",
+    "/login",
+    "/no-funciona",
+    "/password-verificado",
+    "/recuperar-password",
+    "/registro",
+    "/util",
+    "/util/cambio-password",
+    "/util/enviar-correo",
+    "/util/enviar-correo-recuperacion",
+    "/util/no-funciona",
+    "/util/password-verificado",
+    "/util/recuperar-password",
+    "/util/verificado",
+    "/verificado"
+  ]
+}

@@ -1,0 +1,35 @@
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 border-bottom container">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+            <img src="/assets/icono.png" alt="" style="width: 200px;">
+        </a>
+        <ul class="nav nav-pills" *ngIf="verificarAdmin()">
+            <li class="nav-link me-3" routerLink="/admin/inicio" routerLinkActive="active">Home</li>
+            <li class="nav-link" routerLink="/admin/lista" routerLinkActive="active">Lista</li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{nombre | titlecase}}
+            </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)="logaut()">Cerrar session</a></li>
+                </ul>    
+            </li>
+        </ul>
+        <ul class="nav nav-pills" *ngIf="verificarUsuario()">
+            <li class="nav-link me-3" routerLink="/auth/inicio" routerLinkActive="active">Home</li>
+            <li class="nav-link me-3" routerLink="/auth/acortador-de-enlace" routerLinkActive="active" >Acortador</li>
+            <li class="nav-link" routerLink="/auth/lista-de-enlaces" routerLinkActive="active">Lista</li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                {{nombre | titlecase}}
+            </a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" (click)="logaut()">Cerrar session</a></li>
+                </ul>    
+            </li>
+        </ul>
+        <ul class="nav nav-pills" *ngIf="verificarInvitado()"> 
+            <li class="nav-link me-3" routerLink="/" routerLinkActive="active">Home</li>         
+            <li class="nav-link" routerLink="/registro" routerLinkActive="active">Registrarse</li>
+            <li class="nav-link me-3" routerLink="/login" routerLinkActive="active">Ingresar</li>
+        </ul>
+    </header>
+</div>

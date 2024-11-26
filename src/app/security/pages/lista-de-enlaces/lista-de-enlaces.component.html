@@ -1,0 +1,49 @@
+<div class="container mt-5" *ngIf="lista.length != 0">
+    <nav class="navbar navbar-expand-lg bg-dark" data-bs-theme="dark">
+    <div class="container-fluid">
+      <span class="navbar-brand">Ordenar por</span>  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>   
+      <div class="collapse navbar-collapse" id="navbarColor02">
+        <ul class="navbar-nav me-auto mt-1">
+          <li class="nav-link me-3" (click)="orderNombre()">
+            Nombre  <i class="fa-solid fa-sort"></i>
+          </li>
+          <li class="nav-link me-3" (click)="ordervisitas()">
+            Visitas  <i class="fa-solid fa-sort"></i>
+          </li>
+          <li class="nav-link me-3" (click)="orderUrl()">
+            UrlLargas  <i class="fa-solid fa-sort"></i>
+          </li> 
+          <li class="nav-link" (click)="reset()">
+            Resetiar  <i class="fa-solid fa-rotate-left"></i>
+          </li>                 
+        </ul>
+      </div>
+    </div>
+    </nav>
+    <table class="table table-hover table-dark mt-1" >
+        <thead>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Url Corta</th>
+            <th scope="col">Url Larga</th>
+            <th scope="col">Visitas</th>
+            <th scope="col">Accion</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="table-secondary" *ngFor="let url  of lista | ordenar:order " >
+            <th scope="row">{{url.nombre | titlecase}}</th>
+            <td >http://localhost:8080/{{url.corta}}</td>
+            <td>{{url.larga}}</td>
+            <td>{{url.visitas}}</td>
+            <td class="text-danger" (click)="eliminar(url.corta)" style="cursor: pointer;">Eliminar</td>
+        </tr>
+        </tbody>  
+    </table>    
+</div>
+<div class="container mt-5 text-center" *ngIf="lista.length === 0">
+<h1>No tienes enlaces recortados</h1>
+</div>

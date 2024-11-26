@@ -1,0 +1,26 @@
+<div class="container">
+    <form class="col-lg-6 offset-lg-3 col-md-12" [formGroup]="miFormulario" (ngSubmit)="guardar()">
+        <h1 class="form-label mt-4 mb-4 text-center fw-bold">REGISTRATE</h1>
+        <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingname" placeholder="Nombre" autocomplete="off" formControlName="nombre">
+            <label for="floatingname">Nombre</label>
+            <span class="form-text text-danger" *ngIf="validar('nombre')" >Debe de ser mayor a 4 caracteres</span>
+          </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingInput" placeholder="Email" autocomplete="off" formControlName="email">
+          <label for="floatingInput">Email</label>
+          <span class="form-text text-danger" *ngIf="validar('email')" >Este campo no puede quedar vacio</span>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password" autocomplete="off" formControlName="password">
+          <label for="floatingPassword">Password</label>
+          <span class="form-text text-danger" *ngIf="validar('password')" >Debe de ser mayor a 6 caracteres</span>
+        </div>
+        <span class="form-text text-danger " *ngIf="validacion">{{text}}</span>
+        <div class="d-grid gap-2">
+          <button type="submit" class="btn btn-outline-primary mt-3 btn-block fs-4">Registrarte</button>
+        </div>
+        <p class="text-primary text-center mt-3" routerLink="/login" style="cursor: pointer;">¿Ya tienes una cuenta?</p>
+      </form>
+</div>
+<app-snipper *ngIf="snipper"></app-snipper>

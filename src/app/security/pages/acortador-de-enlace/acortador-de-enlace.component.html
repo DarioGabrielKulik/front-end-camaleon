@@ -1,0 +1,19 @@
+<div class="container mb-5">
+    <div class="mt-5">
+        <p>Ingrese un nombre para la url</p>
+        <input type="text" class="form-control" id="uno" [(ngModel)]="nombre" placeholder="Nombre" autocomplete="off">
+    </div> 
+    <div class="mt-3">
+        <p>Ingrese la url acortar</p>
+        <input type="text" class="form-control" id="dos" [(ngModel)]="url" placeholder="Url">
+    </div>
+    <span class="form-text text-danger " *ngIf="validacion">{{text}}</span>
+    <div class="mt-3" *ngIf="resp">
+        <h3 >http://localhost:8080/{{resp.url}}</h3>
+    </div>
+    <div class="col-8 mt-3">
+        <button class="btn btn-outline-success btn-block btn-lg" (click)="convertir()">CONVERTIR</button>
+    </div>
+
+
+</div>
