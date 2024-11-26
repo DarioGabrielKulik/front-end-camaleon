@@ -36,7 +36,7 @@
         <tbody>
         <tr class="table-secondary" *ngFor="let url  of lista | ordenar:order " >
             <th scope="row">{{url.nombre | titlecase}}</th>
-            <td >http://localhost:8080/{{url.corta}}</td>
+            <td >https://camaleon.onrender.com/{{url.corta}}</td>
             <td>{{url.larga}}</td>
             <td>{{url.visitas}}</td>
             <td class="text-danger" (click)="eliminar(url.corta)" style="cursor: pointer;">Eliminar</td>
